@@ -9,11 +9,13 @@ jobs:
 
       - run:
           name: format
-          command: cargo fmt
+          command: cargo fmt --all -- --check
 
       - run:
           name: lint
-          command: rustup component add clippy && cargo clippy
+          command: |
+            rustup component add clippy
+            cargo clippy --all-features -- -D warnings
 
       - run:
           name: test
