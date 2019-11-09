@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/rust
+
+    steps:
+      - checkout
+
+      - run:
+          name: format
+          command: cargo fmt
+
+      - run:
+          name: lint
+          command: cargo clippy
+
+      - run:
+          name: test
+          command: cargo test
