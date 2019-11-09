@@ -1,4 +1,4 @@
-name: Rust
+name: build
 
 on: [push]
 
@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    
+
     - name: format
       run: cargo fmt --all -- --check
 
