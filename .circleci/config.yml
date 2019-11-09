@@ -13,7 +13,7 @@ jobs:
 
       - run:
           name: lint
-          command: cargo clippy
+          command: rustup component add clippy && cargo clippy
 
       - run:
           name: test
